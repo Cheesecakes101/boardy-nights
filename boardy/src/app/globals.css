@@ -1,0 +1,166 @@
+/* Boardy Design System - Playful Board Game Vibes */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm, playful palette */
+    --background: 45 30% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Vibrant purple-indigo primary */
+    --primary: 258 65% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm cream secondary */
+    --secondary: 40 45% 92%;
+    --secondary-foreground: 25 30% 20%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Playful teal accent */
+    --accent: 174 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 85%;
+    --ring: 258 65% 55%;
+
+    --radius: 1rem;
+
+    /* Game status colors */
+    --status-available: 145 65% 42%;
+    --status-booked: 35 90% 55%;
+    --status-partial: 280 55% 55%;
+    --status-unavailable: 0 0% 55%;
+
+    /* Fun gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(258 65% 55%) 0%, hsl(280 60% 60%) 50%, hsl(330 65% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 30% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(174 60% 45%) 0%, hsl(190 70% 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(258 65% 55% / 0.15);
+    --shadow-card: 0 2px 12px -2px hsl(25 30% 15% / 0.08);
+    --shadow-hover: 0 8px 30px -6px hsl(258 65% 55% / 0.25);
+
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 258 65% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 45% 92%;
+    --sidebar-accent-foreground: 25 30% 20%;
+    --sidebar-border: 35 25% 85%;
+    --sidebar-ring: 258 65% 55%;
+  }
+
+  .dark {
+    --background: 25 25% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 25 20% 14%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 258 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 20% 20%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 25 15% 22%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 174 55% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 258 70% 65%;
+
+    --sidebar-background: 25 25% 12%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 258 70% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 25 20% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: 258 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
